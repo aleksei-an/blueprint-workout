@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="helloservice"
+               interface="org.sorgen.blueprintworkout.api.HelloWorldService" />
+
+    <bean id="helloclient" class="org.sorgen.blueprintworkout.HelloWorldClient"
+          init-method="startUp">
+        <property name="helloWorldService" ref="helloservice" />
+    </bean>
+</blueprint>
